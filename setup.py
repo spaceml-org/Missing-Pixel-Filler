@@ -1,10 +1,7 @@
 from setuptools import setup, find_packages 
 
-long_description = '''Python package used to fill \ 
-    an image's missing data gaps. \
-    Specifically useful for obscuring \
-    image patterns in a machine \
-    learning context.''' 
+long_description = '''Python package used to fill an image's missing data gaps. \ 
+    Specifically useful for obscuring image patterns in a machine learning context.''' 
 
 setup(
     name ='empty_image_filler', 
