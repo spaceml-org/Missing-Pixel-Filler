@@ -17,16 +17,10 @@ setup(
     long_description = long_description, 
     long_description_content_type ="text/markdown",  
     packages = find_packages(), 
-    # entry_points ={ 
-    #     'console_scripts': [ 
-    #         'gdl = GIBSDownloader.gibs_downloader:main'
-    #     ] 
-    # }, 
-    # classifiers =( 
-    #     "Programming Language :: Python :: 3", 
-    #     "Operating System :: OS Independent", 
-    # ), 
-    # keywords ='GIBS gdl satellite python package GIBSDownloader', 
-    # install_requires = requirements, 
-    zip_safe = False
+    classifiers =( 
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent", 
+    ), 
+    keywords ='empty_swath_filler emptySwathFiller filler emptySwath swath empty', 
 )
