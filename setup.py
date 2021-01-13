@@ -1,19 +1,16 @@
 from setuptools import setup, find_packages 
 
-with open('requirements.txt') as f:
-    requirements = f.readlines() 
-
-long_description = '''This is a python package that can \ 
-    be used to fill an image's missing \
-    data gaps.''' 
+long_description = '''insert \ 
+    long \
+    description''' 
 
 setup(
     name ='empty_image_filler', 
     version ='0.0.1', 
     author ='Sarah Chen, Esther Cao', 
-    author_email ='sarah.chen6@gmail.com, esthercao888@gmail.com', 
+    author_email ='insert emails', 
     url ='https://github.com/spaceml-org/empty-image-filler', 
-    description ='downloading tool to fill missing data gaps', 
+    description ='insert description', 
     long_description = long_description, 
     long_description_content_type ="text/markdown",  
     packages = find_packages(), 
@@ -23,5 +20,5 @@ setup(
         "Operating System :: OS Independent", 
     ), 
     keywords ='empty_swath_filler emptySwathFiller filler emptySwath swath empty', 
-    install_requires = requirements
+    install_requires = ["Keras-Preprocessing==1.1.2", "numpy==1.19.4", "tensorflow==2.4.0"]
 )
