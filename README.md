@@ -1,8 +1,8 @@
 # Image Data Gap Filler
 
-empty-image-filler is a python package that takes in input images, and if missing data regions are found, the function returns the images with these regions filled. These regions of missing data are filled with non-null neighboring pixels where the probability of a pixel being chosen is inversely proportional to its distance to the pixel it is filling, i.e. closer points get chosen more often. This creates a natural, dynamic filling method for the image.
+empty-image-filler is a python package that, given images that may contain missing data regions, returns these images with the regions filled. These regions of missing data are filled using a dynamic method that incorporates randomly chosen, non-null neighboring pixels.
 
-Our command-line tool is intended to obscure regions of null or missing data from machine learning pattern-recognizing algorithms. More information on our work with this function can be found [here](https://drive.google.com/file/d/18LSWDsXX9PdDLoYNuzKGLzKUZEuGzAo_/view?usp=sharing). However, this package can be used to fill in an image's missing data or a given RGB value in the image for any purpose.
+Our command-line tool is intended to obscure regions of null or missing data from machine learning pattern-recognition algorithms. However, this package can be used to fill in an image's missing data or a given RGB value in the image for any purpose. More information on our work with this package can be found [here](https://drive.google.com/file/d/18LSWDsXX9PdDLoYNuzKGLzKUZEuGzAo_/view?usp=sharing).
 
 ## Installation
 
@@ -32,7 +32,7 @@ Our package works best if less than 25% of the image data is missing.
 
 By default, our code recognizes "missing data" as [0,0,0] RGB, i.e. black, pixels. However, the user has the option to change what RGB values are recognized as "missing data" by ..............
 
-#### How has empty-image-filler been used before?
+#### How has empty-image-filler been used?
 
 Our code was created as a part of research done under SpaceML and alongside NASA's Impact Team. Our goal was to reduce the effects of swath gaps found in NASA Terra and Aqua satellite images in unsupervised machine learning. More information on our work can be found [here](https://drive.google.com/file/d/18LSWDsXX9PdDLoYNuzKGLzKUZEuGzAo_/view?usp=sharing).
 
