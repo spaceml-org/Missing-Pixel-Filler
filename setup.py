@@ -1,8 +1,5 @@
 from setuptools import setup, find_packages 
 
-# with open('requirements.txt') as f:
-#    requirements = f.readlines() 
-
 long_description = '''insert \ 
     long \
     description''' 
