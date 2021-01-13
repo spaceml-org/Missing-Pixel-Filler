@@ -16,7 +16,7 @@ Here we provide an example of our package use.
 
 ## FAQs
 
-#### What type of images can be input to the python package?
+#### What type of images can be used with the python package?
 
 Our package works best if less than 25% of the image data is missing.
 
