@@ -12,9 +12,10 @@ Here we explain how to use our package.
 
 ### Example
 
-Below are some examples of images with missing data regions that have been filled using our package:
+Below are some examples with missing data regions filled by our python function:
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![beachImagesPreFill]()
+![beachImagesPostFill]()
 
 ## FAQs
 
