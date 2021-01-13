@@ -20,7 +20,7 @@ Here is an answer.
 
 If empty_image_filler is useful in your research, please consider citing
 ```
-@article{chen2020swathgaps,
+@article{cao2020swathgaps,
   title={Reducing Effects of Swath Gaps in Unsupervised Machine Learning},
   author={Chen, Sarah and Cao, Esther and Koul, Anirudh and Ganju, Siddha and Praveen, Satyarth and Kasam, Meher Anand},
   journal={Committee on Space Research Machine Learning for Space Sciences Workshop},
