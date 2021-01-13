@@ -14,8 +14,10 @@ Here we explain how to use our package.
 
 Below are some examples with missing data regions filled by our python function:
 
+**Pre-fill**
 ![beachImagesPreFill](beachImagesPreFill.png)
-![beachImagesPostFill](/beachImagesPostFill.png)
+**Post-fill**
+![beachImagesPostFill](beachImagesPostFill.png)
 
 ## FAQs
 
