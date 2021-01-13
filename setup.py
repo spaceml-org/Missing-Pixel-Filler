@@ -19,5 +19,7 @@ setup(
         "Operating System :: OS Independent", 
     ), 
     keywords ='empty_swath_filler emptySwathFiller filler emptySwath swath empty', 
-    install_requires = requirements
+#     install_requires = requirements
+    install_requires = ["Keras-Preprocessing==1.1.2", "numpy==1.19.4", "tensorflow==2.4.0"]
+    extras_require = ["pytest >= 3.7"]
 )
