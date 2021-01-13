@@ -12,7 +12,9 @@ Here we explain how to use our package.
 
 ### Example
 
-Below are some examples of images with areas of missing data that have been filled using our package:
+Below are some examples of images with missing data regions that have been filled using our package:
+
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
 ## FAQs
 
