@@ -16,9 +16,9 @@ Here we provide an example of our package use.
 
 ## FAQs
 
-#### Here is a question?
+#### What type of images can be input to the python package?
 
-Here is an answer.
+Our package works best if less than 25% of the image data is missing.
 
 ## Citation
 
