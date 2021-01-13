@@ -17,11 +17,11 @@ setup(
     long_description = long_description, 
     long_description_content_type ="text/markdown",  
     packages = find_packages(), 
-    entry_points ={ 
-        'console_scripts': [ 
-            'gdl = GIBSDownloader.gibs_downloader:main'
-        ] 
-    }, 
+    # entry_points ={ 
+    #     'console_scripts': [ 
+    #         'gdl = GIBSDownloader.gibs_downloader:main'
+    #     ] 
+    # }, 
     # classifiers =( 
     #     "Programming Language :: Python :: 3", 
     #     "Operating System :: OS Independent", 
