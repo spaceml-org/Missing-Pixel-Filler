@@ -12,13 +12,17 @@ Here we explain how to use our package.
 
 ### Example
 
-Here we provide an example of our package use.
+Below are some examples of images with areas of missing data that have been filled using our package:
 
 ## FAQs
 
 #### What type of images can be used with the python package?
 
 Our package works best if less than 25% of the image data is missing.
+
+#### How does the python package recognize "missing data"?
+
+By default, our code recognizes "missing data" as 0,0,0 RGB pixels.
 
 ## Citation
 
