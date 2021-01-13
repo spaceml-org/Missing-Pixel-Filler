@@ -6,6 +6,10 @@ Here we give a brief description on our package's usefulness.
 
 Here we detail how to install our package.
 
+## Usage
+
+Here we explain how to use our package.
+
 ### Example
 
 Here we provide an example of our package use.
