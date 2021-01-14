@@ -4,7 +4,7 @@ long_description = '''Python package used to fill an image's missing data gaps. 
     Specifically useful for obscuring image patterns in a machine learning context.''' 
 
 setup(
-    name ='empty_image_filler', 
+    name ='image_data_filler', 
     version ='0.0.1', 
     author ='Sarah Chen, Esther Cao', 
     author_email ='sarah.chen6@gmail.com, esthercao888@gmail.com', 
