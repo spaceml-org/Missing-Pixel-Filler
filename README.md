@@ -12,7 +12,7 @@ Here we detail how to install our package. [in progress]
 
 Here we explain how to use our package. [in progress]
 
-### Functions
+#### Functions
 `fill_swath_with_random_rgb(img)` - Method 1. Selects pixel values from a random Gaussian distribution to fill missing pixel values.
 
 `fill_swath_with_random_pixel_from_image_new(img)` - Method 2. Selects other pixel values from non-missing portions of the image to fill missing pixel values. 
@@ -23,15 +23,15 @@ Here we explain how to use our package. [in progress]
 
 |-- `get_neighboring_pixel()` - 
 
-### Arguments
+#### Arguments
 The function arguments are as follows:
 `img` - numpy array of input image in utf8 form.
 `color ` - color of missing data to fill in (0 - black, 256 - white). Default is black. (Optional)
 `current_window_size` - for adaptive nearest neighbors method (method 3), radius for selecting neighbor pixels. Default is 10 pixels. (Optional)
 
-### Example
+## Example
 
-Below are some examples with missing data regions filled by our python function:
+Below are some examples with missing data regions filled by our python function (filling method 3):
 
 **Pre-fill:**
 ![beachImagesPreFill](beachImagesPreFill.png)
