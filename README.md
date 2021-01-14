@@ -16,9 +16,11 @@ Here we explain how to use our package. [in progress]
 `fill_swath_with_random_rgb(img)` - Method 1. Selects pixel values from a random Gaussian distribution to fill missing pixel values.
 
 `fill_swath_with_random_pixel_from_image_new(img)` - Method 2. Selects other pixel values from non-missing portions of the image to fill missing pixel values. 
+
 |-- `get_random_pixel_from_image(x_arr, y_arr)` - Randomly selects non-swath-gap pixel from the image.
 
 `fill_swath_with_neighboring_pixel(img)` - 
+
 |-- `get_neighboring_pixel()` - 
 
 ### Arguments
