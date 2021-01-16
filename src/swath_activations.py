@@ -23,8 +23,8 @@ def fill_swath_with_random_rgb_new(img, color={0,0,0}):
 def get_random_pixel_from_image(x_arr, y_arr):
   """ 
   Selects random non-missing pixel from image
-  Input: x_arr (non-swath x coords), y_arr (non-swath y coords)
-  Output: random non-swath pixel coordinates (x_pix, y_pix)
+  Input: x_arr (non-missing x coords), y_arr (non-missing y coords)
+  Output: random non-missing pixel coordinates (x_pix, y_pix)
   """
   index = random.randint(0, len(x_arr)-1)
   return x_arr[index], y_arr[index]
@@ -47,10 +47,10 @@ def fill_swath_with_random_pixel_from_image_new(img, color={0,0,0}):
 # 3. Fill swath with neighboring pixel
 def get_neighboring_pixel(img, x, y, current_window_size):
   """ 
-  Dynamically selects non empty points in neighbourhood of chosen pixel. When it fails a few times, it increases neighbourhood size automatically.
+  Dynamically selects non-missing points within a radius of the target missing pixel. As selection fails, radius size increases automatically.
   Inputs: img (numpy array)
-          x, y: coordinates of pixel value to fill
-  Outputs: dynamically-selected neighboring pixel (x_neighbor, y_neighbor)
+          x, y: coordinates of the target missing pixel to fill
+  Outputs: dynamically-selected non-missing pixel (x_neighbor, y_neighbor)
   """
   x_rand, y_rand = 0,0
   max_num_tries = 30
@@ -77,7 +77,7 @@ def fill_swath_with_neighboring_pixel(img, color = {0,0,0}, current_window_size 
   """ 
   Filling method 3: 
   Input: image with missing data (numpy array)
-  Output: numpy array with swath filled by random RGB values from non-missing pixel portions of the image selected with probability inversely proportional to distance
+  Output: numpy array with missing data filled by random RGB values from non-missing pixel portions of the image selected with probability inversely proportional to distance
   """
   img_with_neighbor_filled = img.copy()
   (x_swath, y_swath, z_swath) = np.where(img == color)
