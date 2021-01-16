@@ -19,18 +19,15 @@ from tensorflow.keras.models import Model
 # Random seed
 random.seed(1337)
 
-# Download data
-def get_ucmerced_dataset():
-  !wget https://www.dropbox.com/s/daryz3bbhvrrvd5/UCMerced_LandUse.zip
-  !unzip -q UCMerced_LandUse.zip
-  !rm '/content/UCMerced_LandUse.zip'
-  
-get_ucmerced_dataset()
-
 # 1. Random RGB Fill
 # input: img (np array)
 # output: arr (np array with swath filled by random RGB)
 def fill_swath_with_random_rgb(img):
+  """ 
+  Filling method 1: 
+  Input: image with missing data (numpy array)
+  Output: numpy array with swath filled by random RGB values chosen from Gaussian distribution
+  """
   arr = img.copy()
   x, y, z = np.where(arr==[0, 0, 0])
   for i in range(len(x)):
@@ -48,6 +45,11 @@ def get_random_pixel_from_image(x_arr, y_arr):
 # input: img (np array)
 # output: img (np array with random other pixels from image)
 def fill_swath_with_random_pixel_from_image(img):
+  """ 
+  Filling method 2: 
+  Input: image with missing data (numpy array)
+  Output: numpy array with swath filled by random RGB values randomly selected from non-missing pixel portions of the image
+  """
   img = img.copy()
   (x_non_swath, y_non_swath, z_non_swath) = np.where(img != [0, 0, 0])
   (x_swath, y_swath, z_swath) = np.where(img == [0, 0, 0])
@@ -84,6 +86,11 @@ def get_neighboring_pixel(img, x, y):
   return x_rand, y_rand
     
 def fill_swath_with_neighboring_pixel(img):
+  """ 
+  Filling method 3: 
+  Input: image with missing data (numpy array)
+  Output: numpy array with swath filled by random RGB values from non-missing pixel portions of the image selected with probability inversely proportional to distance
+  """
   img_with_neighbor_filled = img.copy()
   (x_swath, y_swath, z_swath) = np.where(img == [0, 0, 0])
 
