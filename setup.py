@@ -12,7 +12,7 @@ setup(
     author ='Sarah Chen, Esther Cao', 
     author_email ='sarah.chen6@gmail.com, esthercao888@gmail.com', 
     url ='https://github.com/spaceml-org/empty-image-filler', 
-    description ='downloading tool to fill missing data gaps', 
+    description ='downloading tool to fill missing image data gaps', 
     long_description = long_description, 
     long_description_content_type ="text/markdown",  
     packages = find_packages(), 
