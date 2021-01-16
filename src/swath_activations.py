@@ -1,58 +1,43 @@
 # Imports
 import math
 import random 
-import PIL
-from PIL import Image, ImageDraw
-import numpy as np
-from itertools import chain
-import cv2
-from matplotlib import pyplot as plt
-import subprocess
-import threading 
-import sys
-from os import path
-from statistics import mean
-import tensorflow as tf
-from tensorflow.keras.applications.resnet50 import ResNet50
-from tensorflow.keras.models import Model
 
 # Random seed
 random.seed(1337)
 
 # 1. Random RGB Fill
-# input: img (np array)
-# output: arr (np array with swath filled by random RGB)
-def fill_swath_with_random_rgb(img):
+def fill_swath_with_random_rgb_new(img, color={0,0,0}):
   """ 
   Filling method 1: 
   Input: image with missing data (numpy array)
   Output: numpy array with swath filled by random RGB values chosen from Gaussian distribution
   """
   arr = img.copy()
-  x, y, z = np.where(arr==[0, 0, 0])
+  x, y, z = np.where(arr==color)
   for i in range(len(x)):
     color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
     arr[x[i]][y[i]]=color
   return arr
 
 # 2. Random RGB From Image Fill
-# input: x_arr (non-swath x coords), y_arr (non-swath y coords)
-# output: a random non-swath pixel
 def get_random_pixel_from_image(x_arr, y_arr):
+  """ 
+  Selects random non-missing pixel from image
+  Input: x_arr (non-swath x coords), y_arr (non-swath y coords)
+  Output: random non-swath pixel coordinates (x_pix, y_pix)
+  """
   index = random.randint(0, len(x_arr)-1)
   return x_arr[index], y_arr[index]
 
-# input: img (np array)
-# output: img (np array with random other pixels from image)
-def fill_swath_with_random_pixel_from_image(img):
+def fill_swath_with_random_pixel_from_image_new(img, color={0,0,0}):
   """ 
   Filling method 2: 
   Input: image with missing data (numpy array)
   Output: numpy array with swath filled by random RGB values randomly selected from non-missing pixel portions of the image
   """
   img = img.copy()
-  (x_non_swath, y_non_swath, z_non_swath) = np.where(img != [0, 0, 0])
-  (x_swath, y_swath, z_swath) = np.where(img == [0, 0, 0])
+  (x_non_swath, y_non_swath, z_non_swath) = np.where(img != color)
+  (x_swath, y_swath, z_swath) = np.where(img == color)
   for i in range(len(x_swath)):
     x_pixel, y_pixel = get_random_pixel_from_image(x_non_swath, y_non_swath)
     img[x_swath[i]][y_swath[i]] = img[x_pixel][y_pixel]
@@ -60,11 +45,14 @@ def fill_swath_with_random_pixel_from_image(img):
   return img
 
 # 3. Fill swath with neighboring pixel
-# Dynamically tries finding non empty points in neighbourhood
-# When it fails few times, it increases neighbourhood size automatically
-def get_neighboring_pixel(img, x, y):
+def get_neighboring_pixel(img, x, y, current_window_size):
+  """ 
+  Dynamically selects non empty points in neighbourhood of chosen pixel. When it fails a few times, it increases neighbourhood size automatically.
+  Inputs: img (numpy array)
+          x, y: coordinates of pixel value to fill
+  Outputs: dynamically-selected neighboring pixel (x_neighbor, y_neighbor)
+  """
   x_rand, y_rand = 0,0
-
   max_num_tries = 30
   max_tries_per_neighbourhood = 3
   neighbourhood_size_increment = 10
@@ -85,17 +73,17 @@ def get_neighboring_pixel(img, x, y):
 
   return x_rand, y_rand
     
-def fill_swath_with_neighboring_pixel(img):
+def fill_swath_with_neighboring_pixel(img, color = {0,0,0}, current_window_size = 10):
   """ 
   Filling method 3: 
   Input: image with missing data (numpy array)
   Output: numpy array with swath filled by random RGB values from non-missing pixel portions of the image selected with probability inversely proportional to distance
   """
   img_with_neighbor_filled = img.copy()
-  (x_swath, y_swath, z_swath) = np.where(img == [0, 0, 0])
+  (x_swath, y_swath, z_swath) = np.where(img == color)
 
   for i in range(len(x_swath)):
-    x_rand, y_rand = get_neighboring_pixel(img, x_swath[i], y_swath[i])
+    x_rand, y_rand = get_neighboring_pixel(img, x_swath[i], y_swath[i], current_window_size)
     img_with_neighbor_filled[x_swath[i]][y_swath[i]] = img[x_rand][y_rand]
   return img_with_neighbor_filled
 
