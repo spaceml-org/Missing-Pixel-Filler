@@ -1,5 +1,8 @@
 from setuptools import setup, find_packages 
 
+with open('requirements.txt') as f:
+    requirements = f.readlines() 
+
 long_description = '''Python package used to fill an image's missing data gaps. \ 
     Specifically useful for obscuring image patterns in a machine learning context.''' 
 
@@ -19,6 +22,5 @@ setup(
         "Operating System :: OS Independent", 
     ), 
     keywords ='empty_image_data_filler empty_image_filler image_data_filler empty_swath_filler data_filler swath_filler image_filler filler image data swath empty', 
-    install_requires = ["Keras-Preprocessing==1.1.2", "numpy==1.19.4", "tensorflow==2.4.0"]
-    extras_require = {"dev": ["pytest >= 3.7", ], }
+    install_requires = requirements
 )
