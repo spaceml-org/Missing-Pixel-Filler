@@ -6,7 +6,8 @@ Our command-line tool is intended to obscure regions of null or missing data fro
 
 ## Installation
 
-Here we detail how to install our package. [in progress]
+[in progress]
+Clone the directory with this url: https://github.com/spaceml-org/Missing-Pixel-Filler.git
 
 ## Usage
 
