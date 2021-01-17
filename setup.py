@@ -23,5 +23,5 @@ setup(
     ), 
     keywords = 'missing_pixel_filler missing_image_filler image_data_filler empty_image_filler pixel_filler image_filler filler pixel image', 
     install_requires = requirements,
-    py_modules = ['swath_activations']
+    py_modules=['swath_activations']
 )
