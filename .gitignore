@@ -1,3 +1,7 @@
+
+# Created by https://www.toptal.com/developers/gitignore/api/windows,macos,sublimetext,linux,vscode,python,pycharm
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,sublimetext,linux,vscode,python,pycharm
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
