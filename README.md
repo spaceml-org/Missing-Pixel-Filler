@@ -5,9 +5,8 @@ missing-pixel-filler is a python package that, given images that may contain mis
 Our command-line tool is intended to obscure regions of null or missing data from machine learning pattern-recognition algorithms. However, this package can be used to fill in an image's missing data or a given RGB value in the image for any purpose. More information on our work with this package can be found [here](https://drive.google.com/file/d/18LSWDsXX9PdDLoYNuzKGLzKUZEuGzAo_/view?usp=sharing).
 
 ## Installation
-
+Clone the directory at the following url: https://github.com/spaceml-org/Missing-Pixel-Filler.git
 [in progress]
-Clone the directory with this url: https://github.com/spaceml-org/Missing-Pixel-Filler.git
 
 ## Usage
 
