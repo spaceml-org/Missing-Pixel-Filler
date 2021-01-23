@@ -7,27 +7,37 @@ Our command-line tool is intended to obscure regions of null or missing data fro
 ## Usage
 
 #### Installation
+
 This package can be installed by typing the following into your command line:
+
 `pip install git+https://github.com/spaceml-org/Missing-Pixel-Filler.git#egg=missing_pixel_filler`
 
 #### Functions
+
 `fill_swath_with_random_rgb(img)` - Filling Method 1. Selects pixel values from a random Gaussian distribution to fill missing pixel values.
 
 `fill_swath_with_random_pixel_from_image_new(img)` - Filling Method 2. Fills swath gap with random pixel from non-missing portion of data. 
+
 |-- `get_random_pixel_from_image(x_arr, y_arr)` - Selects other pixel values from non-missing portions of the image.
 
 `fill_swath_with_neighboring_pixel(img)` - Filling Method 3. Fills "dynamic" system to fill swath, with nearest pixels having higher probability of selection. 
+
 |-- `get_neighboring_pixel()` - Selects pixel pixel values from non-missing portions of the image to fill missing pixel values with probability inversely proportional to distance. 
 
 #### Arguments
+
 The function arguments are as follows:
+
 `img` - numpy array of input image in utf8 form.
+
 `color ` - Optional parameter - color of missing data to fill in (0 - black, 256 - white). Default is black.
+
 `current_window_size` - for adaptive nearest neighbors method (method 3), radius for selecting neighbor pixels. Default is 10 pixels. 
 
 ## Example
 
 Below are some examples with missing data regions filled by our python function (filling method 3). The function call is as follows:
+
 `fill_swath_with_neighboring_pixel(img)`.
 
 Image results: 
@@ -39,6 +49,7 @@ Image results:
 ![beachImagesPostFill](beachImagesPostFill.png)
 
 ## FAQs
+
 #### What type of images can be used with the python package?
 
 Our package works best if less than 25% of the image data is missing. This package was originally developed to fill missing data from NASA WorldView, in which an image containing 10% to 25% of the total image is still considered for training data. 
@@ -54,6 +65,7 @@ Our code was created as a part of research done under SpaceML and alongside NASA
 ## Citation
 
 If missing-pixel-filler is useful in your research, please consider citing
+
 ```
 @article{cao2020swathgaps,
   title={Reducing Effects of Swath Gaps in Unsupervised Machine Learning},
