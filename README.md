@@ -14,15 +14,18 @@ This package can be installed by typing the following into your command line:
 
 #### Functions
 
-*Filling Method 1* 
+*Filling Method 1*
+
 `fill_swath_with_random_rgb(img)` - Selects pixel values from a random Gaussian distribution to fill missing pixel values.
 
 *Filling Method 2*
+
 `fill_swath_with_random_pixel_from_image_new(img)` - Fills swath gap with random pixel from non-missing portion of data. 
 
 |-- `get_random_pixel_from_image(x_arr, y_arr)` - Selects other pixel values from non-missing portions of the image.
 
 *Filling Method 3*
+
 `fill_swath_with_neighboring_pixel(img)` - Fills "dynamic" system to fill swath, with nearest pixels having higher probability of selection. 
 
 |-- `get_neighboring_pixel()` - Selects pixel pixel values from non-missing portions of the image to fill missing pixel values with probability inversely proportional to distance. 
