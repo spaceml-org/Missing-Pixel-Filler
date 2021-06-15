@@ -1,6 +1,6 @@
 # Missing Pixel Filler
 
-missing-pixel-filler is a python package that, given images that may contain missing data regions, returns these images with the regions filled. These regions of missing data are filled using a dynamic method that incorporates randomly chosen, non-null neighboring pixels.
+`missing-pixel-filler` is a python package that, given images that may contain missing data regions, returns these images with the regions filled. These regions of missing data are filled using a dynamic method that incorporates randomly chosen, non-null neighboring pixels. The missing data filling algorithms can be changed according to user preferences. 
 
 Our command-line tool is intended to obscure regions of null or missing data from machine learning pattern-recognition algorithms. However, this package can be used to fill in an image's missing data or a given RGB value in the image for any purpose. More information on our work with this package can be found [here](https://drive.google.com/file/d/18LSWDsXX9PdDLoYNuzKGLzKUZEuGzAo_/view?usp=sharing).
 
@@ -14,13 +14,16 @@ This package can be installed by typing the following into your command line:
 
 #### Functions
 
-`fill_swath_with_random_rgb(img)` - Filling Method 1. Selects pixel values from a random Gaussian distribution to fill missing pixel values.
+*Filling Method 1* 
+`fill_swath_with_random_rgb(img)` - Selects pixel values from a random Gaussian distribution to fill missing pixel values.
 
-`fill_swath_with_random_pixel_from_image_new(img)` - Filling Method 2. Fills swath gap with random pixel from non-missing portion of data. 
+*Filling Method 2*
+`fill_swath_with_random_pixel_from_image_new(img)` - Fills swath gap with random pixel from non-missing portion of data. 
 
 |-- `get_random_pixel_from_image(x_arr, y_arr)` - Selects other pixel values from non-missing portions of the image.
 
-`fill_swath_with_neighboring_pixel(img)` - Filling Method 3. Fills "dynamic" system to fill swath, with nearest pixels having higher probability of selection. 
+*Filling Method 3*
+`fill_swath_with_neighboring_pixel(img)` - Fills "dynamic" system to fill swath, with nearest pixels having higher probability of selection. 
 
 |-- `get_neighboring_pixel()` - Selects pixel pixel values from non-missing portions of the image to fill missing pixel values with probability inversely proportional to distance. 
 
@@ -64,7 +67,7 @@ Our code was created as a part of research done under SpaceML and alongside NASA
 
 ## Citation
 
-If missing-pixel-filler is useful in your research, please consider citing
+If `missing-pixel-filler` is useful in your research, please consider citing
 
 ```
 @article{cao2020swathgaps,
