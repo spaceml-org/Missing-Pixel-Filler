@@ -1,3 +1,7 @@
+<div>
+[![Google Colab Notebook Example](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10AGpd6koorPMW4TEuo2cOsD1E9zlY1WC#scrollTo=Bz22h2C5iGMn)
+</div>
+
 # Missing Pixel Filler
 
 `missing-pixel-filler` is a python package that, given images that may contain missing data regions, returns these images with the regions filled. These regions of missing data are filled using a dynamic method that incorporates randomly chosen, non-null neighboring pixels. The missing data filling algorithms can be changed according to user preferences. 
