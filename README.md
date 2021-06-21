@@ -4,7 +4,7 @@ This is the official code repository for the [**Missing Pixel Filler**](https://
 
 `missing-pixel-filler` is a python package that, given images that may contain missing data regions (like satellite imagery with swath gaps), returns these images with the regions filled. These regions of missing data are filled using a dynamic method that incorporates randomly chosen, non-null neighboring pixels. The missing data filling algorithms can be changed according to user preferences. 
 
-<img src="/images/swath.PNG" width="600">
+<img src="https://github.com/spaceml-org/Missing-Pixel-Filler/blob/main/images/swath.png" width="600">
 
 The command-line tool is intended to obscure regions of null or missing data from machine learning pattern-recognition algorithms. However, this package can be used to fill in an image's missing data or a given RGB value in the image for any purpose. 
 
