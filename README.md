@@ -1,4 +1,4 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10AGpd6koorPMW4TEuo2cOsD1E9zlY1WC#scrollTo=Bz22h2C5iGMn)
+[![Colab Demo](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10AGpd6koorPMW4TEuo2cOsD1E9zlY1WC#scrollTo=Bz22h2C5iGMn)
 
 # Missing Pixel Filler
 
