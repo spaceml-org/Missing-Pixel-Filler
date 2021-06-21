@@ -1,10 +1,14 @@
-[![Colab Demo](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10AGpd6koorPMW4TEuo2cOsD1E9zlY1WC#scrollTo=Bz22h2C5iGMn)
-
 # Missing Pixel Filler
 
-`missing-pixel-filler` is a python package that, given images that may contain missing data regions, returns these images with the regions filled. These regions of missing data are filled using a dynamic method that incorporates randomly chosen, non-null neighboring pixels. The missing data filling algorithms can be changed according to user preferences. 
+This is the official code repository for the [**Missing Pixel Filler**](https://arxiv.org/abs/2106.07113) by [SpaceML](http://spaceml.org/).
 
-Our command-line tool is intended to obscure regions of null or missing data from machine learning pattern-recognition algorithms. However, this package can be used to fill in an image's missing data or a given RGB value in the image for any purpose. More information on our work with this package can be found [here](https://arxiv.org/abs/2106.07113).
+`missing-pixel-filler` is a python package that, given images that may contain missing data regions (like satellite imagery with swath gaps), returns these images with the regions filled. These regions of missing data are filled using a dynamic method that incorporates randomly chosen, non-null neighboring pixels. The missing data filling algorithms can be changed according to user preferences. 
+
+<img src="swath.PNG" width="600">
+
+The command-line tool is intended to obscure regions of null or missing data from machine learning pattern-recognition algorithms. However, this package can be used to fill in an image's missing data or a given RGB value in the image for any purpose. 
+
+More information on our work with this package can be found [on Arxiv](https://arxiv.org/abs/2106.07113), or [![Colab Demo](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10AGpd6koorPMW4TEuo2cOsD1E9zlY1WC#scrollTo=Bz22h2C5iGMn)
 
 ## Usage
 
