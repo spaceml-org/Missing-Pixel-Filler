@@ -55,10 +55,10 @@ Below are some examples with missing data regions filled by our python function 
 Image results: 
 
 **Pre-fill:**
-![beachImagesPreFill](beachImagesPreFill.png)
+![beachImagesPreFill]("https://github.com/spaceml-org/Missing-Pixel-Filler/blob/main/images/beachImagesPreFill.png")
 
 **Post-fill:**
-![beachImagesPostFill](beachImagesPostFill.png)
+![beachImagesPostFill]("https://github.com/spaceml-org/Missing-Pixel-Filler/blob/main/images/beachImagesPostFill.png)
 
 ## FAQs
 
