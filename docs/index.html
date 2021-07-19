@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="bnoFBnIUa_ExNW78iL9iiIrJdu4iq-eO1TFCVn_mBQ4">
+  <meta name="author" content="Sarah Chen, Esther Cao">
+  <meta name="keywords" content="sarah chen,esther cao,cmu,carnegie mellon university,swath gaps,Machine Learning,swath gaps,unsupervised machine learning,NASA MODIS instruments">
+  <meta name="description" content="Reducing Effects of Swath Gaps on Unsupervised Machine Learning Models for NASA MODIS Instruments">
+  <meta name="title" content="Reducing Effects of Swath Gaps on Unsupervised Machine Learning Models for NASA MODIS Instruments">
+
+  <title>Reducing Effects of Swath Gaps on Unsupervised Machine Learning Models for NASA MODIS Instruments</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="./bootstrap.min.css">
+  <link rel="stylesheet" href="./bootstrap-theme.min.css">
+
+  <!-- Google Fonts -->
+  <link href="./css" rel="stylesheet" type="text/css">
+
+  <!-- Google Analytics -->
+  <link rel="stylesheet" type="text/css" href="./style.css">
+
+  <script async="" src="./analytics.js"></script>
+  <script async="" src="./analytics(1).js"></script>
+  <script async="" src="./analytics(2).js"></script>
+  <script> function page_loaded() {} </script>
+  
+</head>
+
+<body onload="page_loaded()">
+
+<div id="header">
+  <a href="http://cvpr2017.thecvf.com/" target="_blank">
+    <img src="./space_ml_logo.png" style="height:40px; float:left; margin-left:20px; margin-top:40px">
+  </a>
+  <a href="http://www.cmu.edu/" target="_blank">
+    <img src="./1024px-Carnegie_Mellon_University_seal.svg.png" style="height:120px; float:right; margin-right:60px;">
+  </a>
+  <h1><b>Reducing Effects of Swath Gaps<br>on Unsupervised Machine Learning Models</b><br>for NASA MODIS Instruments</h1>
+  <div style="clear:both;"></div>
+</div>
+
+<div class="sechighlight">
+  <div class="container sec">
+    <h2>Abstract</h2>
+    <div id="coursedesc">
+      Due to the nature of their pathways, NASA Terra and NASA Aqua satellites capture imagery containing “swath gaps'' which are areas of no data. Swath gaps can overlap the region of interest (ROI) completely, often rendering the entire imagery unusable by Machine Learning (ML) models. This problem is further exacerbated when the ROI rarely occurs (e.g. a hurricane) and, on occurrence, is partially overlapped with a swath gap. With annotated data as supervision, a model can learn to differentiate between the area of focus and the swath gap. However, annotation is expensive and currently the vast majority of existing data is unannotated. Hence, we propose an augmentation technique that considerably removes the existence of swath gaps in order to allow CNNs to focus on the ROI, and thus successfully use data with swath gaps for training. We experiment on the UC Merced Land Use Dataset, where we add swath gaps through empty polygons (up to 20% areas) and then apply augmentation techniques to fill the swath gaps. We compare the model trained with our augmentation techniques on the swath gap-filled data with the model trained on the original swath gap-less data and note highly augmented performance. Additionally, we perform a qualitative analysis using activation maps that visualizes the effectiveness of our trained network in not paying attention to the swath gaps. We also evaluate our results with a human baseline and show that, in certain cases, the filled swath gaps look so realistic that even a human evaluator did not distinguish between original satellite images and swath gap-filled images. Since this method is aimed at unlabeled data, it is widely generalizable and impactful for large scale unannotated datasets from various space data domains. 
+    </div>
+  </div>
+</div>
+
+<div class="container sec" align="center">
+  <a href="https://arxiv.org/pdf/2106.07113.pdf" target="_blank">
+    <img src="./essay_thumbnail.png" style="width:100%;border: 1px solid #AAA;">
+  </a>
+  <br>
+  <div align="center">
+    <div class="instructor" align="center">
+      <div class="instructorphoto"><img src="./1024px-Carnegie_Mellon_University_seal.svg.png"></div>
+      <div>Esther Cao</div>
+    </div>
+    <div class="instructor" align="center">
+      <a href="https://www.linkedin.com/in/sarahchen6/" target="_blank">
+        <div class="instructorphoto"><img src="./professional_prof_pic.JPG"></div>
+        <div>Sarah Chen</div>
+      </a>
+    </div>
+    <div class="instructor"  align="center" >
+      <a href="http://sidgan.me/siddhaganju">
+        <div class="instructorphoto"><img src="./siddha.jpeg"></div>
+        <div>Siddha Ganju</div>
+      </a>
+    </div>
+    <div class="instructor"  align="center" >
+      <a href="https://www.linkedin.com/in/anirudhkoul/">
+        <div class="instructorphoto"><img src="./anirudh.jpeg"></div>
+        <div>Anirudh Koul</div>
+      </a>
+    </div>
+    <div class="instructor"  align="center" >
+      <a href="https://www.linkedin.com/in/meherkasam/">
+        <div class="instructorphoto"><img src="./meher.jpeg"></div>
+        <div>Meher Anand Kasam</div>
+      </a>
+    </div>
+    <div class="instructor"  align="center" >
+      <a href="https://www.linkedin.com/in/satyarth934/">
+        <div class="instructorphoto"><img src="./satyarth.jpeg"></div>
+        <div>Satyarth Praveen</div>
+      </a>
+    </div>
+  </div>
+  <div style="color:#900;" align="center">
+    <br>
+  </div>
+</div>
+
+<div class="sechighlight">
+<div class="container sec" style="font-size:18px">
+  <div class="row">
+    <div class="col-md-5">
+      <h2>Links</h2>
+      <ul>
+        <li> <a href="https://arxiv.org/pdf/2106.07113.pdf" target="_blank">Paper</a> </li>
+        <li> <a href="https://youtu.be/oD2IActRGoE" target="_blank">Presentation</a> </li>
+        <li> <a href="https://github.com/spaceml-org/Missing-Pixel-Filler" target="_blank">Github</a> </li>
+        <li> <a href="https://colab.research.google.com/drive/10AGpd6koorPMW4TEuo2cOsD1E9zlY1WC?usp=sharing" target="_blank">Google Colab</a> </li>
+      </ul>
+    </div>
+    <div class="col-md-7">
+      <h2>Bibtex</h2>
+<pre style="font-size:12px;">@article{cao2020swathgaps,
+  title={Reducing Effects of Swath Gaps in Unsupervised Machine Learning},
+  author={Chen, Sarah and Cao, Esther and Koul, Anirudh and Ganju, Siddha 
+  and Praveen, Satyarth and Kasam, Meher Anand},
+  journal={Committee on Space Research Machine Learning for Space Sciences Workshop,
+  Cross-Disciplinary Workshop on Cloud Computing},
+  year={2021}
+}
+</pre>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container sec">
+  <h2></h2>
+  <h2>What are Swath Gaps?</h2>
+  Swath gaps are empty or no data regions that occur in MODIS imagery. They exist because the MODIS satellites have a swath bandwidth of only 2330 km wide, causing consecutive orbits at the equator to miss coverage. Due to this missing coverage, these regions of missing data are present primarily as nine spindle shapes around the equator; however, they also occur at the North and South Poles during seasons of minimal sunlight. This uncollected data can be visualized as black spindles or swath gaps by NASA's Earth Observing System Data and Information System in the <a href="https://worldview.earthdata.nasa.gov/" target="_blank">NASA Worldview</a>.
+  <h2>Why are Swath Gaps important?</h2>
+  Through data exploration experiments and input from the NASA IMPACT team, we noted that similarity search experiments that find the most similar image, supposedly based on regions of interests (ROIs) such as hurricanes or beaches, instead return images with similarly placed swath gaps. These search engines focus on swath gaps, rather than concentrating on the ROI. Thus, we determine that when notable swath gaps are present in satellite imagery, specifically used for training Earth-sciences machine learning (ML) models, these areas of missing data render the entire image unusable by unsupervised training models. Further, ML pattern recognition algorithms begin recognizing the image's swath gap as its main feature, rather than the features of its primary ROI. This is an issue because, given the nature of satellite imagery, events of interest or ROIs are already quite sporadic in regards to rare events such as tornadoes, wildfires, and volcanic eruptions, and thus every piece of data is valuable. With already limited data, the occurrence of a swath gap overlapping the ROI further reduces the available data.
+  We address the problem that swath gaps create when present in unlabeled image datasets that are used to train unsupervised machine learning models. The following is an example of swath gaps present due to NASA Terra and NASA Aqua satellite pathways.
+  <br>
+  <br>
+  <br>
+    <div id="gallery" align="center">
+      <div class="egimg" align="center" style="width: 1000px;">
+        <img src="./earth_swath_gaps.png" style="width: 100%;">
+      </div>
+    </div>
+  <br>
+  <br>
+  <br>
+
+  <h2>Our Filling Methods</h2>
+  We resolve the problem that swath gaps pose by experimenting with three different methods: Random RGB (filling the swath gap with randomly selected RGB pixels), Pixel RGB (filling the swath gap with randomly selected RGB pixels from the image), and Neighbor RGB (filling the swath gap with randomly selected RGB pixels from a dynamic radius of the given pixel to be filled).
+  <br>
+  <br>
+  <br>
+    <div id="gallery" align="center">
+      <div class="egimg" style="width: 1000px;">
+        <img src="./filling_methods.png" style="width: 100%;">
+      </div>
+    </div>
+  <br>
+  <br>
+  <br>
+
+  <h2>Evaluation Activation Maps</h2>
+  One way in which we assess our fill methods is by analyzing the effects they have on activation maps as seen below. We further evaluated our fill methods by using an autoencoder to perform similarity searches - given an input image, we ask the autoencoder to return the four most similar images from the dataset.  Separate autoencoder models with each augmentation policy are trained. Testing was then conducted on the three filling methods by querying images filled with our methods into the autoencoder. These results greatly improved as methodology increased from method one (Random RGB) to two (Pixel RGB) to three (Neighbor RGB), with successively more images categorized correctly per fill method. Repetition of this experiment indicated that filling method three, Neighbor RGB, was the most efficient, with consistently three or four out of the four "most similar" images being categorized correctly.
+  <br>
+  <br>
+    <div id="gallery" align="center">
+      <div class="egimg" align="center" style="width: 1000px;">
+        <img src="./swath_gap_activation_maps.png" style="width: 100%;">
+      </div>
+    </div>
+  <br>
+  <br>
+  <br>
+</div>
+
+<div class="sechighlight">
+  <div id="footer">
+    This research is supported by SpaceML.
+    <br>
+    <br>
+    Website code reference: 
+    <a href="http://cs.stanford.edu/people/karpathy/densecap/" target="_blank">DenseCap: Fully Convolutional Localization Networks for Dense Captioning</a>
+    <br>
+    <br>
+    Pretty pdf generated with <a href="https://github.com/salmedina/pdf2thumb" target="_blank">link.</a>
+  </div>
+</div>
+
+<!-- jQuery and Bootstrap -->
+<script src="./jquery.min.js"></script>
+<script src="./bootstrap.min.js"></script>
+
+<!-- Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-59744528-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body></html>
