@@ -79,7 +79,7 @@ Our code was created as a part of research done under SpaceML and alongside NASA
 If `missing-pixel-filler` is useful in your research, please consider citing
 
 ```
-@article{cao2020swathgaps,
+@article{caochen2020swathgaps,
   title={Reducing Effects of Swath Gaps in Unsupervised Machine Learning},
   author={Chen, Sarah and Cao, Esther and Koul, Anirudh and Ganju, Siddha and Praveen, Satyarth and Kasam, Meher Anand},
   journal={Committee on Space Research Machine Learning for Space Sciences Workshop},
