@@ -8,7 +8,7 @@ This is the official code repository for the [**Missing Pixel Filler**](https://
 
 The command-line tool is intended to obscure regions of null or missing data from machine learning pattern-recognition algorithms. However, this package can be used to fill in an image's missing data or a given RGB value in the image for any purpose. 
 
-More information on our work with this package can be found [on Arxiv](https://arxiv.org/abs/2106.07113), or [![Colab Demo](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10AGpd6koorPMW4TEuo2cOsD1E9zlY1WC#scrollTo=Bz22h2C5iGMn)
+More information on our work with this package can be found [on Arxiv](https://arxiv.org/abs/2106.07113), or [![Colab Demo](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1GYyXAA_EbUveTeDgwy-wMHj1LXIdXdcy?usp=sharing)
 
 ## Usage
 
