@@ -6,7 +6,7 @@ import random
 random.seed(1337)
 
 # 1. Random RGB Fill
-def fill_swath_with_random_rgb_new(img, color={0,0,0}):
+def fill_swath_with_random_rgb_new(img, color={0,0,0}, left, right, top, bottom):
   """ 
   Filling method 1: 
   Input: image with missing data (numpy array)
@@ -16,7 +16,8 @@ def fill_swath_with_random_rgb_new(img, color={0,0,0}):
   x, y, z = np.where(arr==color)
   for i in range(len(x)):
     color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-    arr[x[i]][y[i]]=color
+    if (x >= left) and (x <= right) and (y >= top) and (y <= bottom):
+      arr[x[i]][y[i]]=color
   return arr
 
 # 2. Random RGB From Image Fill
@@ -29,7 +30,7 @@ def get_random_pixel_from_image(x_arr, y_arr):
   index = random.randint(0, len(x_arr)-1)
   return x_arr[index], y_arr[index]
 
-def fill_swath_with_random_pixel_from_image_new(img, color={0,0,0}):
+def fill_swath_with_random_pixel_from_image_new(img, color={0,0,0}, left, right, top, bottom):
   """ 
   Filling method 2: 
   Input: image with missing data (numpy array)
@@ -40,7 +41,8 @@ def fill_swath_with_random_pixel_from_image_new(img, color={0,0,0}):
   (x_swath, y_swath, z_swath) = np.where(img == color)
   for i in range(len(x_swath)):
     x_pixel, y_pixel = get_random_pixel_from_image(x_non_swath, y_non_swath)
-    img[x_swath[i]][y_swath[i]] = img[x_pixel][y_pixel]
+    if (x_pixel >= left) and (x_pixel <= right) and (y_pixel >= top) and (y_pixel <= bottom):
+      img[x_swath[i]][y_swath[i]] = img[x_pixel][y_pixel]
 
   return img
 
@@ -73,7 +75,7 @@ def get_neighboring_pixel(img, x, y, current_window_size):
 
   return x_rand, y_rand
     
-def fill_swath_with_neighboring_pixel(img, color = {0,0,0}, current_window_size = 10):
+def fill_swath_with_neighboring_pixel(img, color = {0,0,0}, current_window_size = 10, left, right, top, bottom):
   """ 
   Filling method 3: 
   Input: image with missing data (numpy array)
@@ -84,6 +86,7 @@ def fill_swath_with_neighboring_pixel(img, color = {0,0,0}, current_window_size 
 
   for i in range(len(x_swath)):
     x_rand, y_rand = get_neighboring_pixel(img, x_swath[i], y_swath[i], current_window_size)
-    img_with_neighbor_filled[x_swath[i]][y_swath[i]] = img[x_rand][y_rand]
+    if (x_rand >= left) and (x_rand <= right) and (y_rand >= top) and (y_rand <= bottom):
+      img_with_neighbor_filled[x_swath[i]][y_swath[i]] = img[x_rand][y_rand]
   return img_with_neighbor_filled
 
