@@ -6,7 +6,7 @@ import random
 random.seed(1337)
 
 # 1. Random RGB Fill
-def fill_swath_with_random_rgb_new(img, color={0,0,0}, left, right, top, bottom):
+def fill_swath_with_random_rgb_new(img, left, right, top, bottom, color={0,0,0}):
   """ 
   Filling method 1: 
   Input: image with missing data (numpy array)
@@ -30,7 +30,7 @@ def get_random_pixel_from_image(x_arr, y_arr):
   index = random.randint(0, len(x_arr)-1)
   return x_arr[index], y_arr[index]
 
-def fill_swath_with_random_pixel_from_image_new(img, color={0,0,0}, left, right, top, bottom):
+def fill_swath_with_random_pixel_from_image_new(img, left, right, top, bottom, color={0,0,0}):
   """ 
   Filling method 2: 
   Input: image with missing data (numpy array)
@@ -75,7 +75,7 @@ def get_neighboring_pixel(img, x, y, current_window_size):
 
   return x_rand, y_rand
     
-def fill_swath_with_neighboring_pixel(img, color = {0,0,0}, current_window_size = 10, left, right, top, bottom):
+def fill_swath_with_neighboring_pixel(img, left, right, top, bottom, color = {0,0,0}, current_window_size = 10):
   """ 
   Filling method 3: 
   Input: image with missing data (numpy array)
