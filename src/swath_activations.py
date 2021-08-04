@@ -39,13 +39,10 @@ def fill_swath_with_random_pixel_from_image_new(img, left, right, top, bottom, c
   img = img.copy()
   (x_non_swath, y_non_swath, z_non_swath) = np.where(img != color)
   (x_swath, y_swath, z_swath) = np.where(img == color)
-#   (x_swath, y_swath, z_swath) = np.where(img == color)
   for i in range(len(x_swath)):
     x_pixel, y_pixel = get_random_pixel_from_image(x_non_swath, y_non_swath)
-    if (x_swath[i] >= left) and (x_swath[i] <= right) and (y_swath[i] >= top) and (y_swath[i] <= bottom):
-#     if np.any(x_pixel >= left) and np.any(x_pixel <= right) and np.any(y_pixel >= top) and np.any(y_pixel <= bottom):
-      img[x_swath[i]][y_swath[i]] = img[x_pixel][y_pixel]
-
+    img[x_swath[i]][y_swath[i]] = img[x_pixel][y_pixel]
+#     if (x_swath[i] >= left) and (x_swath[i] <= right) and (y_swath[i] >= top) and (y_swath[i] <= bottom):
   return img
 
 # 3. Fill swath with neighboring pixel
