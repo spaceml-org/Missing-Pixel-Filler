@@ -38,7 +38,7 @@ def fill_swath_with_random_pixel_from_image_new(img, left, right, top, bottom, c
   """
   img = img.copy()
   (x_non_swath, y_non_swath, z_non_swath) = np.where(img != color)
-  (x_swath, y_swath, z_swath) = (np.arange(left, right), np.arange(bottom, top))
+  (x_swath, y_swath, z_swath) = np.where(img == color)
 #   (x_swath, y_swath, z_swath) = np.where(img == color)
   for i in range(len(x_swath)):
     x_pixel, y_pixel = get_random_pixel_from_image(x_non_swath, y_non_swath)
