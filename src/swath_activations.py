@@ -16,7 +16,7 @@ def fill_swath_with_random_rgb_new(img, left, right, top, bottom, color={0,0,0})
   x, y, z = np.where(arr==color)
   for i in range(len(x)):
     color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-    if np.any(x >= left) and np.any(x <= right) and np.any(y >= top) and np.any(y <= bottom):
+    if (x[i] >= left) and (x[i] <= right) and (y[i] >= top) and (y[i] <= bottom):
       arr[x[i]][y[i]]=color
   return arr
 
@@ -41,7 +41,8 @@ def fill_swath_with_random_pixel_from_image_new(img, left, right, top, bottom, c
   (x_swath, y_swath, z_swath) = np.where(img == color)
   for i in range(len(x_swath)):
     x_pixel, y_pixel = get_random_pixel_from_image(x_non_swath, y_non_swath)
-    if np.any(x_pixel >= left) and np.any(x_pixel <= right) and np.any(y_pixel >= top) and np.any(y_pixel <= bottom):
+    if (x_swath[i] >= left) and (x_swath[i] <= right) and (y_swath[i] >= top) and (y_swath[i] <= bottom):
+#     if np.any(x_pixel >= left) and np.any(x_pixel <= right) and np.any(y_pixel >= top) and np.any(y_pixel <= bottom):
       img[x_swath[i]][y_swath[i]] = img[x_pixel][y_pixel]
 
   return img
