@@ -38,7 +38,8 @@ def fill_swath_with_random_pixel_from_image_new(img, left, right, top, bottom, c
   """
   img = img.copy()
   (x_non_swath, y_non_swath, z_non_swath) = np.where(img != color)
-  (x_swath, y_swath, z_swath) = np.where(img == color)
+  (x_swath, y_swath, z_swath) = (np.arange(left, right), np.arange(bottom, top))
+#   (x_swath, y_swath, z_swath) = np.where(img == color)
   for i in range(len(x_swath)):
     x_pixel, y_pixel = get_random_pixel_from_image(x_non_swath, y_non_swath)
     if (x_swath[i] >= left) and (x_swath[i] <= right) and (y_swath[i] >= top) and (y_swath[i] <= bottom):
@@ -83,8 +84,9 @@ def fill_swath_with_neighboring_pixel(img, left, right, top, bottom, color = {0,
   Output: numpy array with missing data filled by random RGB values from non-missing pixel portions of the image selected with probability inversely proportional to distance
   """
   img_with_neighbor_filled = img.copy()
-  (x_swath, y_swath, z_swath) = np.where(img == color)
-
+#   (x_swath, y_swath, z_swath) = np.where(img == color)
+  (x_swath, y_swath, z_swath) = (np.arange(left, right), np.arange(bottom, top))
+  
   for i in range(len(x_swath)):
     x_rand, y_rand = get_neighboring_pixel(img, x_swath[i], y_swath[i], current_window_size)
     if np.any(x_rand >= left) and np.any(x_rand <= right) and np.any(y_rand >= top) and np.any(y_rand <= bottom):
