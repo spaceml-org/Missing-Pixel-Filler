@@ -41,7 +41,7 @@ def fill_swath_with_random_pixel_from_image(img, left=10, right=100, top=10, bot
   (x_swath, y_swath, z_swath) = np.where(img == color)
   for i in range(len(x_swath)):
     x_pixel, y_pixel = get_random_pixel_from_image(x_non_swath, y_non_swath)
-    if x_swath[i] > left and x_swath[i] < right and y_swath[i] > top and y_swath[i] < bottom:
+    if x_swath[i] >= left and x_swath[i] <= right and y_swath[i] >= top and y_swath[i] <= bottom:
       img[x_swath[i]][y_swath[i]] = img[x_pixel][y_pixel]
   return img
 
@@ -85,6 +85,6 @@ def fill_swath_with_neighboring_pixel(img, left=10, right=100, top=10, bottom=10
 
   for i in range(len(x_swath)):
     x_rand, y_rand = get_neighboring_pixel(img, x_swath[i], y_swath[i], current_window_size)
-    if x_swath[i] > left and x_swath[i] < right and y_swath[i] > top and y_swath[i] < bottom:
+    if x_swath[i] >= left and x_swath[i] <= right and y_swath[i] >= top and y_swath[i] <= bottom:
       img_with_neighbor_filled[x_swath[i]][y_swath[i]] = img[x_rand][y_rand]
   return img_with_neighbor_filled
